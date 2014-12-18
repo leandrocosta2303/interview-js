@@ -1,4 +1,7 @@
-"devDependencies": {
-  "chai": "*",
-  "mocha": "*"
+{
+  "name": "js-interview-tests",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
 }
