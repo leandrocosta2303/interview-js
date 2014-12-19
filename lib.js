@@ -10,34 +10,23 @@ String.prototype.spacify = function( )
 };
 
 
-module.exports.log = function(  ) {
+module.exports.log = function( ) {
 
-  var x = arguments[ arguments.length - 1 ];
-
-
-  for (var i = 0; i < arguments.length; i++) {
-    console.log(x.log(arguments[i] ) )
+  var log = arguments[ arguments.length - 1 ];
+ 
+  for (var i = 0; i < arguments.length - 2; i++) {
+      console.log( log.log( arguments[i] ) );
   };
 
-  // window[args]
-
-
-  // return obj.log( str );
-  // args[ ].log = 1;
-
-
-
-  // console.log( args['log'](str) );
-
-
-  // console.log( args );
 }
 
 module.exports.User = {
   _count: 0,
   count: function(){
+    return this._count = 2;
   },
   new: function (attributes) {
+    return attributes;
   }
 
 }
