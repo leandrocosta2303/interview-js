@@ -15,23 +15,28 @@ describe('String.spacify', function(){
 describe('lib.log', function(){
   context('with one argument', function() {
     it('logs the arguments', function(){
+      var called = false
       var console = {
         log: function(arg) {
+          called = true
           var args = Array.prototype.slice.call(arguments)
           expect(args.join('')).to.contain('Hello!')
         }
       }
       lib.log('Hello!', console) 
+      expect(called).to.be.equal(true)
     })
   })
 
   context('with multiple arguments', function(){
     it('log all the arguments', function(){
+      var called = false
       var expectedArguments = [1,2,3,4,5].map(function(n){
         return n * Math.random()
       })
       var console = {
         log: function() {
+          called = true
           var args = Array.prototype.slice.call(arguments)
           for(var i in expectedArguments) {
             expect(args).to.include(expectedArguments[i])
@@ -41,17 +46,21 @@ describe('lib.log', function(){
       args = expectedArguments.slice()
       args.push(console)
       lib.log.apply(lib.log, args)
+      expect(called).to.be.equal(true)
     })
   })
 
   it('prefixes all messages with "(app)"', function(){
+    var called = false
     var console = {
       log: function() {
+        called = true
         var args = Array.prototype.slice.call(arguments)
         expect(args.join('')).to.contain('(app)')
       }
     }
     lib.log('Hello!', console)
+    expect(called).to.be.equal(true)
   })
 })
 
