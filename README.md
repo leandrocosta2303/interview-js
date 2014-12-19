@@ -13,7 +13,7 @@ Simple tests that the candidate should resolve in a job interview
 
 Run tests
 ```shell
-  $ mocha
+  $ mocha -R nyan
 ```
 
 Resolve all the tests
