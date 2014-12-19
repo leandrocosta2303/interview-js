@@ -1,7 +1,6 @@
 {
   "name": "js-interview-tests",
-  "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
+  "scripts": {
+    "preinstall": "npm install -g mocha && npm install -g chai"
   }
 }
