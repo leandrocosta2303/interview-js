@@ -23,9 +23,10 @@ module.exports.log = function( ) {
 module.exports.User = {
   _count: 0,
   count: function(){
-    return this._count = 2;
+    return this._count;
   },
   new: function (attributes) {
+    this._count++;
     return attributes;
   }
 
